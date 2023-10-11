@@ -2,13 +2,13 @@
 
 const mongoose = require('mongoose');
 
-const feeheads = new mongoose.Schema({
-  amount:Number,
-  name: String,
+const students = new mongoose.Schema({
+  // amount:Number,
+  // name: String,
   
-frequency_months: Number,
+// frequency_months: Number,
 });
 
-const Fee = mongoose.model('Feeheads', feeheads);
+const Std = mongoose.model('Students', students);
 
-module.exports = Fee;
+module.exports = Std;

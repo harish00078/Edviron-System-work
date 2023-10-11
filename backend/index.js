@@ -7,6 +7,7 @@ const tasksRoutes = require('./routes/tasks');
 const app = express();
 const port = process.env.PORT || 3000;
 
+mongoose.set('strictQuery', true);
 // Connect to your MongoDB database (replace with your connection string)
 mongoose.connect('mongodb+srv://assignment:edviron@cluster0.ebxruu8.mongodb.net', { useNewUrlParser: true, useUnifiedTopology: true });
 
