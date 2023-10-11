@@ -2,12 +2,13 @@
 
 const mongoose = require('mongoose');
 
-const taskSchema = new mongoose.Schema({
-  title: String,
-  description: String,
-  completed: Boolean,
+const feeheads = new mongoose.Schema({
+  amount:Number,
+  name: String,
+  
+frequency_months: Number,
 });
 
-const Task = mongoose.model('Task', taskSchema);
+const Fee = mongoose.model('Feeheads', feeheads);
 
-module.exports = Task;
+module.exports = Fee;

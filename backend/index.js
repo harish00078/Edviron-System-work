@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to your MongoDB database (replace with your connection string)
-mongoose.connect('mongodb+srv://harish:harish123@cluster0.0qpeyqk.mongodb.net/task-app', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://assignment:edviron@cluster0.ebxruu8.mongodb.net', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Middleware for parsing JSON
 app.use(express.json());

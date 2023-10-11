@@ -1,7 +1,9 @@
 // 2. Create the tasksController (controllers/tasksController.js)
 
+const Fee = require('../models/task');
 const Task = require('../models/task');
 
+// Create a new task
 // Create a new task
 async function createTask(req, res) {
   try {
@@ -16,9 +18,9 @@ async function createTask(req, res) {
 // Get all tasks
 async function getAllTasks(req, res) {
   try {
-    const tasks = await Task.find();
+    const tasks = await Fee.find();
     res.status(200).json(tasks);
-    console.log('have all the tasks');
+    console.log('we have all the tasks');
   } catch (error) {
     res.status(500).json({ error: 'Could not retrieve tasks.' });
   }
