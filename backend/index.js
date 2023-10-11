@@ -1,26 +1,21 @@
+// 4. Create the main Express app (app.js)
+
 const express = require('express');
 const mongoose = require('mongoose');
+const tasksRoutes = require('./routes/tasks');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
+// Connect to your MongoDB database (replace with your connection string)
+mongoose.connect('mongodb+srv://harish:harish123@cluster0.0qpeyqk.mongodb.net/task-app', { useNewUrlParser: true, useUnifiedTopology: true });
 
-// ... rest of your Express app setup
-const yourRoutes = require('./routes/routes');
+// Middleware for parsing JSON
+app.use(express.json());
 
-// Replace 'your_connection_string' with your actual connection string from MongoDB Atlas
-const dbURI = 'mongodb+srv://assignment:edviron@cluster0.ebxruu8.mongodb.net';
+// Use the tasks routes
+app.use('/tasks', tasksRoutes);
 
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Connected to MongoDB Atlas');
-  })
-  .catch((error) => {
-    console.error('Error connecting to MongoDB Atlas: ', error);
-  });
-  
-
-app.use('/api', yourRoutes);
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
